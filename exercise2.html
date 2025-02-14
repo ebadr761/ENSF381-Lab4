@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab4 - Exercise 2</title>
+    </head>
+    <body>
+        <h1>JavaScript Lab</h1>
+        <script>
+            //Step 1 Declaring Functions
+            /*
+            function add(a, b) {
+                return a + b;
+            }
+            function subtract(a, b) {
+                return a - b;
+            }
+            */
+
+            //Step 2: arrow functions
+            const add = (a, b = 314) => a + b;
+            const subtract = (a, b = 134) => a - b;
+            const multiply = (a, b = 1) => a * b;
+            const divide = (a, b = 1) => b === 0 ? "Cannot divide by 0" : a / b;
+
+            function calculator(callback, x, y) {
+                return callback(x, y);
+            }
+            //test
+            console.log(calculator(add, 10, 5)); //15
+            console.log(calculator(add, 10)); //324 (when there is no b given)
+            console.log(calculator(subtract, 10, 5)); //5
+            console.log(calculator(subtract, 10)); //-124 (when there is no b given)
+            console.log(calculator(multiply, 10, 5)); //50
+            console.log(calculator(divide, 10, 5)); //2
+            console.log(calculator(divide, 10, 0)); //cannot divide by 0
+        </script>
+    </body>
+</html>
