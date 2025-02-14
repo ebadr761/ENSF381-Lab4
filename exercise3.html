@@ -4,11 +4,12 @@
         <title>Lab4 - Exercise 3</title>
     </head>
     <body>
+        <h1>JavaScript Lab</h1>
         <script>
-            let classRoster = ["Alice", "Tom", "Charlie", "Diana", "Evan"];
-            //convert array to a string
+            //Arrays and Basic Methods
+            const classRoster = ["Alice", "Tom", "Charlie", "Diana", "Evan"];
             console.log(classRoster.toString());
-            //use method to add Fionna and Nancy
+            console.log(classRoster);
             classRoster.push("Fionna", "Nancy");
             console.log(classRoster);
             // Remove the first student in the list
@@ -16,7 +17,7 @@
             console.log(classRoster);
             console.log(classRoster.length);
 
-            // create object classInfo with properties: className, instructor, students, details
+            // Objects with Nested Structures
             const classInfo = {
                 className: "ENSF 381: Full Stack Web Development",
                 instructor: "Dr. Smith",
@@ -27,7 +28,6 @@
                 },
                 schedule: {
                     days: ["Monday", "Wednesday", "Friday"],
-                    time: "10:00 AM",
                 },
             };
             classInfo.instructor = "Abdellatif";
@@ -39,7 +39,6 @@
             console.log(classInfo);
             // access and log semester property from nested details object
             console.log(classInfo.details.semester);
-
             //log updated classInfo object
             console.log(classInfo);
 
@@ -47,9 +46,14 @@
             const { className, students } = classInfo;
             console.log(className);
             console.log(students);
+
+            //Destructure semester and year properties
+            const { semester, year } = classInfo.details;
+            console.log(semester);
+            console.log(year);
+
             //same with with student1 and student2
-            const [student1, student2] = students;
-            const remainingStudents = students.slice(2);
+            const [student1, student2, ...remainingStudents] = classRoster;
             console.log(student1);
             console.log(student2);
             console.log(remainingStudents);
